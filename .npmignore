@@ -1,4 +1,4 @@
-build/**/*.spec.js
-node_modules
-src
-test
+*
+!build/**/*.js
+!build/**/*.d.ts
+!package.json
