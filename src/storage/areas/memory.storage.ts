@@ -9,7 +9,7 @@ export class MemoryStorage implements Area {
   }
 
   get(key: string) {
-    return this.memory.get(key)
+    return this.memory.get(key);
   }
 
   set(key: string, value: string) {

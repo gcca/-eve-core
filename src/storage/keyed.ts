@@ -1,8 +1,10 @@
 import { Area } from './areas';
-import { LocalStorage } from './areas/localstorage';
-import { MemoryStorage } from './areas/memorystorage';
-import { SessionStorage } from './areas/sessionstorage';
+import { LocalStorage } from './areas/local.storage';
+import { MemoryStorage } from './areas/memory.storage';
+import { SessionStorage } from './areas/session.storage';
+
 import { BrowserStorage } from './facades';
+
 import { Storage } from './index';
 
 type Mixin = (Base: new() => Storage) => new() => Storage & { area(): Area };

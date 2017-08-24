@@ -1,4 +1,4 @@
-import { WebStorage } from './platform';
+import { WebStorage } from './areas';
 
 export class SessionStorage extends WebStorage {
   windowStorage = window.sessionStorage;
