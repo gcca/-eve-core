@@ -1,4 +1,7 @@
-import { Area, LocalStorage, MemoryStorage, SessionStorage } from './areas';
+import { Area } from './areas';
+import { LocalStorage } from './areas/localstorage';
+import { MemoryStorage } from './areas/memorystorage';
+import { SessionStorage } from './areas/sessionstorage';
 import { BrowserStorage } from './facades';
 import { Storage } from './index';
 

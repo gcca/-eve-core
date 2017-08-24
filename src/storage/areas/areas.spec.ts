@@ -1,4 +1,4 @@
-import { LocalStorage } from './areas';
+import { LocalStorage } from './localstorage';
 
 describe('Storage', () => {
 
