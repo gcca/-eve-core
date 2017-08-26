@@ -29,6 +29,6 @@
   },
   "scripts": {
     "build": "tsc -p src/",
-    "test": "mocha build/**/*.spec.js -r resources/register"
+    "test": "mocha 'build/**/*.spec.js' -r resources/register"
   }
 }
