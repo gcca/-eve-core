@@ -1,4 +1,4 @@
-import { ServiceLocator } from './index';  // './service.locator';
+import { Locator, Service, ServiceLocator } from './service-locator';
 
 describe('ServiceLocator', () => {
   describe('on construction', () => {
@@ -7,23 +7,23 @@ describe('ServiceLocator', () => {
       title: string;
     }
 
-    interface BookFinder {
+    interface BookFinder extends Service {
       find(): Book[];
     }
 
-    interface BookReader {
+    interface BookReader extends Service {
       read(): string;
     }
 
-    interface BookFilenameLocator {
+    interface BookFilenameLocator extends Locator {
       bookFilename: string;
     }
 
-    interface BookFinderLocator {
+    interface BookFinderLocator extends Locator {
       bookFinder: BookFinder;
     }
 
-    interface BookReaderLocator {
+    interface BookReaderLocator extends Locator {
       bookReader: BookReader;
     }
 
@@ -40,7 +40,7 @@ describe('ServiceLocator', () => {
 
     class HorrorBookFinder implements BookFinder {
       find() {
-        const locator = BookServiceLocator.locator<BookServiceLocator>();
+        const locator = BookServiceLocator.locator();
         const reader = locator.bookReader
         const books = reader.read();
         return books.split('\n').map(line =>
@@ -49,8 +49,8 @@ describe('ServiceLocator', () => {
     }
 
     class ColonBookReader implements BookReader {
-      read(): string {
-        const locator = BookServiceLocator.locator<BookServiceLocator>();
+      read() {
+        const locator = BookServiceLocator.locator();
         const filename = locator.bookFilename;
         if ('colon_horror_books' == filename) {
           return ('H.P. Lovecraft:The Dunwich Horror\n' +
@@ -62,7 +62,7 @@ describe('ServiceLocator', () => {
 
     class BookLister {
       booksWrittenBy(author: string): Book[] {
-        const locator = BookServiceLocator.locator<BookServiceLocator>();
+        const locator = BookServiceLocator.locator();
         const finder = locator.bookFinder;
         const books = finder.find();
         return books.filter(book => author == book.author);
