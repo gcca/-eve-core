@@ -54,7 +54,7 @@ describe('ServiceLocator', () => {
         const filename = locator.bookFilename;
         if ('colon_horror_books' == filename) {
           return ('H.P. Lovecraft:The Dunwich Horror\n' +
-                  'Stephen King: DOCTOR SLEEP');
+                  'Stephen King:DOCTOR SLEEP');
         }
         throw new Error(`File '${filename}' not found`);
       }
