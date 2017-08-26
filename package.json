@@ -13,6 +13,7 @@
     "chai": "^4.1.1",
     "mocha": "^3.5.0",
     "sinon": "^3.2.0",
+    "typedoc": "^0.8.0",
     "typescript": "^2.4.2"
   },
   "homepage": "https://github.com/gcca/eve#readme",
@@ -29,6 +30,7 @@
   },
   "scripts": {
     "build": "tsc -p src/",
+    "doc": "typedoc --module commonjs --out doc/ src/",
     "test": "mocha 'build/**/*.spec.js' -r resources/register"
   }
 }
