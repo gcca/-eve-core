@@ -1,4 +1,5 @@
 build
+doc
 node_modules
 
 *.js
