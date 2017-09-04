@@ -1,0 +1,7 @@
+{
+  "name": "@eve/core",
+  "description": "@Eve - Core",
+  "version": "0.0.0",
+  "license": "GPL-2.0",
+  "main": "index.js"
+}
