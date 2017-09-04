@@ -31,6 +31,7 @@
   "scripts": {
     "build": "tsc -p src/",
     "doc": "typedoc --hideGenerator --module commonjs --out doc/ --target es6 --theme minimal src/",
+    "pretest": "[ ! -d build ] && npm run build || exit 0",
     "test": "mocha 'build/**/*.spec.js' -r resources/register"
   }
 }
