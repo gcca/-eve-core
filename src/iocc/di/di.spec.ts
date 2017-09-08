@@ -1,4 +1,4 @@
-import { Container, Injector } from './index';
+import { Container, Injector } from './di';
 
 describe('di', () => {
   class BurgererContainer extends Container { }
